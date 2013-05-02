@@ -1,6 +1,6 @@
 # Strava::Api::V2
 
-TODO: Write a gem description
+API for accessing the strava V2 API - (http://bit.ly/161qmXg)
 
 ## Installation
 
