@@ -8,6 +8,7 @@ module Strava
       include HTTParty
       include Strava::V2::AuthRequest
 
+      attr_reader :user_id, :token
       base_uri 'http://www.strava.com/api/v2'
       format :json
 
@@ -32,6 +33,11 @@ module Strava
             return response.parsed_response
         end
         raise NetworkError.new('Bad status ' + response.code.to_s)
+      end
+
+      def set_authorized_user(user_id, token)
+        @user_id = user_id
+        @token = token
       end
     end
   end
