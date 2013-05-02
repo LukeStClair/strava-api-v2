@@ -1,6 +1,6 @@
 module Strava
   module V2
-    module Auth
+    module AuthRequest
       def login_path
         'authentication/login'
       end

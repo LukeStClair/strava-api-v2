@@ -1,12 +1,12 @@
 require 'httparty'
 require 'strava/exceptions'
-require 'strava/v2/auth'
+require 'strava/v2/auth_request'
 
 module Strava
   module V2
     class Connection
       include HTTParty
-      include Strava::V2::Auth
+      include Strava::V2::AuthRequest
 
       base_uri 'http://www.strava.com/api/v2'
       format :json
