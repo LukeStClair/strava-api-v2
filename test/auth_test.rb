@@ -4,7 +4,6 @@ require 'strava/v2/connection'
 require 'strava/exceptions'
 require 'strava/v2/models/athlete'
 require 'json'
-require 'pp'
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'test'))
 require 'test_data'
 

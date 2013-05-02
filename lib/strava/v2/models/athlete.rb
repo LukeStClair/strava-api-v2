@@ -1,4 +1,4 @@
-require 'strava/v2/models/strava_response'
+require 'strava/strava_response'
 
 module Strava
   module V2
