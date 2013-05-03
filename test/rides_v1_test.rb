@@ -35,4 +35,28 @@ class RidesV1Test < Test::Unit::TestCase
 
     assert_equal(52127040, rides[0].id)
   end
+
+  def test_getting_efforts_for_a_ride
+    ride_id = 77563
+    Strava::V1::Connection.stubs(:get)
+    .with("/rides/#{ride_id}/efforts", {:query => {}})
+    .returns(stub(:code => 200, :parsed_response => (JSON.parse TestData.test_efforts)))
+    ride = @s.ride_with_efforts(ride_id)
+    assert_equal(ride_id, ride.id)
+    assert_equal(5819602, ride.efforts[0].id)
+    assert_equal(640366, ride.efforts[0].segment.id)
+  end
+
+  def test_show_ride_details
+    ride_id = 77563
+    Strava::V1::Connection.stubs(:get)
+    .with("/rides/#{ride_id}", {:query => {}})
+    .returns(stub(:code => 200, :parsed_response => (JSON.parse TestData.test_show_ride_deets)))
+    ride = @s.ride(ride_id)
+    assert_equal(82369.1, ride.distance)
+    assert_equal(1441.02, ride.elevation_gain)
+    assert_equal("02/28/10 San Francisco, CA", ride.name)
+    assert_equal("julianbill", ride.athlete.username)
+    assert_equal(1139, ride.athlete.id)
+  end
 end

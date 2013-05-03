@@ -1,4 +1,5 @@
 require 'strava/v1/models/ride'
+require 'strava/v1/models/effort'
 
 module Strava
   module V1
@@ -14,7 +15,15 @@ module Strava
       }
 
       def rides_path
-        'rides'
+        "rides"
+      end
+
+      def ride_path(id)
+        "rides/#{id}"
+      end
+
+      def rides_with_efforts_path(id)
+        rides_path + "/#{id}/efforts"
       end
 
       def rides(params = {})
@@ -29,7 +38,22 @@ module Strava
         rides_array.each { |ride_json|
           all_rides.push(Ride.new(ride_json))
         }
-        return all_rides
+        all_rides
+      end
+
+      def ride_with_efforts(ride_id)
+        all_json = self.fetch(rides_with_efforts_path(ride_id), {})
+        ride = Ride.new(all_json["ride"])
+        all_efforts = []
+        all_json["efforts"].each { |effort_json|
+          all_efforts.push(Effort.new(effort_json))
+        }
+        ride.efforts = all_efforts
+        ride
+      end
+
+      def ride(ride_id)
+        Ride.new(self.fetch(ride_path(ride_id), {})["ride"])
       end
     end
   end
