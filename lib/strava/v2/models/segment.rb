@@ -1,5 +1,5 @@
 require 'strava/strava_response'
-require 'strava/v1/models/effort'
+require 'strava/v2/models/effort'
 
 module Strava
   module V2
