@@ -1,8 +1,8 @@
 require 'test/unit'
 require 'mocha/setup'
-require 'strava/v2/connection'
+require 'strava/v1/connection'
 require 'strava/exceptions'
-require 'strava/v2/models/athlete'
+require 'strava/v1/models/athlete'
 require 'json'
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'test'))
 require 'test_data'
