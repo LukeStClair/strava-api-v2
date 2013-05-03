@@ -4,7 +4,7 @@ module Strava
   module V1
     module ClubsRequest
       def clubs_path
-        "clubs"
+        'clubs'
       end
 
       def clubs(name)
