@@ -5,7 +5,7 @@ module Strava
   module V1
     class Ride < StravaResponse
       attr_reader :id, :name, :distance, :moving_time, :average_speed, :average_watts, :name, :elevation_gain, :athlete
-      attr_accessor :efforts
+      attr_accessor :segments
 
       def initialize(json)
         @id = json["id"]

@@ -43,8 +43,8 @@ class RidesV1Test < Test::Unit::TestCase
     .returns(stub(:code => 200, :parsed_response => (JSON.parse TestData.test_efforts)))
     ride = @s.ride_with_efforts(ride_id)
     assert_equal(ride_id, ride.id)
-    assert_equal(5819602, ride.efforts[0].id)
-    assert_equal(640366, ride.efforts[0].segment.id)
+    assert_equal(5819602, ride.segments[0].efforts[0].id)
+    assert_equal(640366, ride.segments[0].id)
   end
 
   def test_show_ride_details

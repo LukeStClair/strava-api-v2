@@ -44,11 +44,11 @@ module Strava
       def ride_with_efforts(ride_id)
         all_json = self.fetch(rides_with_efforts_path(ride_id), {})
         ride = Ride.new(all_json["ride"])
-        all_efforts = []
+        all_segments = []
         all_json["efforts"].each { |effort_json|
-          all_efforts.push(Effort.new(effort_json))
+          all_segments.push(Segment.new(effort_json["segment"], [effort_json]))
         }
-        ride.efforts = all_efforts
+        ride.segments = all_segments
         ride
       end
 
