@@ -71,23 +71,23 @@ Search for club by name
 
 See http://bit.ly/18Ctky9 for more details - this also enables you to retrieve tokens and athlete information.
 
-  $ auth = connection_v2.login("email@example.com", "password")
-  $ token = auth.token
-  $ athlete = auth.athlete
+    $ auth = connection_v2.login("email@example.com", "password")
+    $ token = auth.token
+    $ athlete = auth.athlete
 
 ## Segments for a given ride
 
 See http://bit.ly/125MoTh for more details - this allows you to look up the segments for a given ride
 
-  $ segments = connection_v2.segments_for_ride(ride_id)
-  $ first_segment_efforts = segments[0].efforts
+    $ segments = connection_v2.segments_for_ride(ride_id)
+    $ first_segment_efforts = segments[0].efforts
 
 ## All efforts for a given ride
 
 See http://bit.ly/125MoTh - looks up all efforts put out in a given ride.
 
-  $ segments = connection_v2.segments_and_efforts_for_ride(ride_id)
-  $ first_effort = segments[0].efforts[0]
+    $ segments = connection_v2.segments_and_efforts_for_ride(ride_id)
+    $ first_effort = segments[0].efforts[0]
 
 ## Issues
 
