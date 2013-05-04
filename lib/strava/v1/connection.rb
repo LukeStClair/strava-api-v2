@@ -1,3 +1,5 @@
+require 'httparty'
+require 'strava/base_connection'
 require 'strava/v1/rides_request'
 require 'strava/v1/streams_request'
 require 'strava/v1/segments_request'

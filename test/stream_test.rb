@@ -17,7 +17,7 @@ class StreamTest < Test::Unit::TestCase
     stream_id = 49807853
 
     Strava::V1::Connection.stubs(:get)
-    .with("/#{@s.streams_path(stream_id)}", {:query => nil})
+    .with("/streams/#{stream_id}", {:query => nil})
     .returns(stub(:code => 200, :parsed_response => (JSON.parse TestData.test_stream)))
     stream = @s.stream(stream_id)
     assert stream.is_a?(Strava::V1::Stream)

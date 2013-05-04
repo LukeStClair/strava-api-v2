@@ -4,7 +4,7 @@ module Strava
   module V1
     module StreamRequest
       def streams_path(id)
-        'streams/#{id}'
+        "streams/#{id}"
       end
 
       def stream(id)
