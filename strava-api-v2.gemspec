@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'strava/api/v2/version'
+require 'strava/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "strava-api-v2"
-  spec.version       = Strava::Api::V2::VERSION
+  spec.version       = Strava::VERSION
   spec.authors       = ["Luke StClair"]
   spec.email         = ["secureboot@gmail.com"]
   spec.description   = %q{API to access strava API, v2}
