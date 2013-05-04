@@ -2,6 +2,8 @@
 
 API for accessing the strava V2 API - (http://bit.ly/161qmXg)
 
+Very experimental right now, but is in use. Subject to change in future versions.
+
 ## Installation
 
 Add this line to your application's Gemfile:
